@@ -1,16 +1,18 @@
-import ReactDOM from "react-dom"
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class EmployeeList extends Component {
-    render() {
-        return (
-            <article>
-                <h1>Employee List</h1>
-                <section>Jessica Younker</section>
-                <section>Jordan Nelson</section>
-                <section>Zoe LeBlanc</section>
-                <section>Blaise Roberts</section>
-            </article>
-        );
-    }
+  render() {
+    console.log(this.props.employees);
+    return (
+      <React.Fragment>
+        {
+            this.props.employees.map(employee =>
+                <div>
+                    <h3>{employee.name}</h3>
+                </div>
+        )
+        }
+      </React.Fragment>
+    );
+  }
 }

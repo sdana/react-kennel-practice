@@ -1,23 +1,40 @@
 import React, { Component } from "react"
+import Animal from "./Animal"
 
-export default class EmployeeList extends Component {
+export default class AnimalList extends Component {
+  state = {
+    animals: [
+      { id: 1, name: "Panther" },
+      { id: 2, name: "Cat" },
+      { id: 3, name: "Dog" },
+      { id: 4, name: "CatDog" },
+      { id: 5, name: "Buffalo" },
+      { id: 6, name: "Beefalo" }
+    ]
+    //   owners: [
+    //     { id: 1, name: "Ryan Tanay" },
+    //     { id: 2, name: "Emma Beaton" },
+    //     { id: 3, name: "Dani Adkins" },
+    //     { id: 4, name: "Adam Oswalt" },
+    //     { id: 5, name: "Fletcher Bangs" },
+    //     { id: 6, name: "Angela Lee" }
+    //   ],
+    //     ownersAndAnimals: [
+    //       { id: 1, animalId: 3, ownerId: 4 },
+    //       { id: 2, animalId: 1, ownerId: 2 },
+    //       { id: 3, animalId: 5, ownerId: 6 },
+    //       { id: 4, animalId: 2, ownerId: 3 },
+    //       { id: 5, animalId: 6, ownerId: 1 },
+    //       { id: 6, animalId: 4, ownerId: 5 }
+    //     ]
+  }
   render() {
-    console.log(this.props.employees)
     return (
-      <React.Fragment>
-        {this.props.ownersAndAnimals.map((item, index) => {
-          let currentAni = item.animalId - 1
-          let currentOwn = item.ownerId - 1
-          console.log(currentAni)
-          console.log(currentOwn)
-          return (
-            <div className="animals-card">
-              <h3>{this.props.animals[currentAni].name}</h3>
-              <h4>{this.props.owners[currentOwn].name}</h4>
-            </div>
-          )
-        })}
-      </React.Fragment>
+      <ul>
+        {this.state.animals.map((animal) => (
+          <Animal key={animal.id} animal={animal} />
+      ))}
+        </ul>
     )
   }
 }

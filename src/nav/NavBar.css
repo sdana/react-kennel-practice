@@ -2,22 +2,28 @@ nav a {
     display: inline-block;
     font-size: 1.3em;
     background: coral;
-    /* margin-left: 5px; */
+    margin-left: 10px;
     padding: 10px;
     font-style: none;
-    transition: .3s;
-    border: .5px solid white;
-
+    transition: .2s;
+    transition: box-shadow 0;
 }
 
 nav a:hover {
-    background: cornflowerblue;
+    /* background: cornflowerblue; */
     color: white;
     text-decoration: none;
-    border: .5px solid white;
+    /* border: .5px solid white; */
     font-weight: bold;
+    /* border-right: 1px solid cornflowerblue; */
 }
 
 nav a:active {
-    box-shadow: -3px 2px 2px black;
+    box-shadow: inset 3px 2px 2px black;
+    text-shadow: 1px 2px 2px black;
+}
+
+nav {
+    width: 100%;
+    background: coral;
 }

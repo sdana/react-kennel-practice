@@ -1,22 +1,24 @@
 import React, { Component } from "react"
 import Employee from "./Employee"
+import api from "./apiController"
 
 export default class EmployeeList extends Component {
     state = {
-      employees: [
-        { id: 1, name: "Jessica Younker" },
-        { id: 2, name: "Jordan Nelson" },
-        { id: 3, name: "Zoe LeBlanc" },
-        { id: 4, name: "Blaise Roberts" }
-      ]
+      employees: []
+    }
+
+  componentDidMount() {
+    api.getThing("employees")
+      .then(employees => this.setState({ employees: employees }))
   }
+
   render() {
     return (
       <React.Fragment>
         {this.state.employees.map((employee, i) => (
-          <div className="employee-div" key={employee.id}>
-            <Employee employee={employee} />
-          </div>
+            <Employee key={employee.id} employee={employee}>
+              {employee.name}
+            </Employee>
         ))}
       </React.Fragment>
     )

@@ -1,0 +1,23 @@
+nav a {
+    display: inline-block;
+    font-size: 1.3em;
+    background: coral;
+    /* margin-left: 5px; */
+    padding: 10px;
+    font-style: none;
+    transition: .3s;
+    border: .5px solid white;
+
+}
+
+nav a:hover {
+    background: cornflowerblue;
+    color: white;
+    text-decoration: none;
+    border: .5px solid white;
+    font-weight: bold;
+}
+
+nav a:active {
+    box-shadow: -3px 2px 2px black;
+}

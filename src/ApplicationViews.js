@@ -7,6 +7,7 @@ import Location from "./Location"
 import EmployeeList from "./EmployeeList"
 import Employee from "./Employee"
 import Login from "./Login"
+import SearchResults from "./SearchResults"
 
 export default class ApplicationViews extends Component {
   isAuthenticated = () => {
@@ -23,6 +24,7 @@ export default class ApplicationViews extends Component {
       return (
         <React.Fragment>
           <Route path="/login" component={Login} />
+          <Route path="/searchResults" component={SearchResults} />
           <Route exact path="/" component={LocationList} />
           <Route
             path="/locations/:locationId"

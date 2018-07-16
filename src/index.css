@@ -14,3 +14,8 @@ body {
   color: rgb(255, 106, 106);
   text-decoration: none;
 }
+
+.card {
+  margin-top: 30px;
+  margin-left: 15px;
+}

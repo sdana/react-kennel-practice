@@ -1,7 +1,7 @@
 nav a {
     display: inline-block;
-    font-size: 1.3em;
-    background: coral;
+    font-size: 1.5em;
+    background: rgb(255, 244, 144);
     margin-left: 10px;
     padding: 10px;
     font-style: none;
@@ -11,7 +11,7 @@ nav a {
 
 nav a:hover {
     /* background: cornflowerblue; */
-    color: white;
+    color: rgb(255, 102, 102);
     text-decoration: none;
     /* border: .5px solid white; */
     font-weight: bold;
@@ -25,9 +25,19 @@ nav a:active {
 
 nav {
     width: 100%;
-    background: coral;
+    background: rgb(255, 244, 144);
+    margin-bottom: 20px;
+    box-shadow: 5px 3px 8px rgb(131, 120, 120);
 }
 
 nav form {
     display: inline-block;
+}
+
+nav input {
+    margin-left: 40px;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 20px;
+    border: none;
 }

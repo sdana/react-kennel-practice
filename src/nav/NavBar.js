@@ -18,6 +18,7 @@ export default class NavBar extends Component {
 
   submitForm = (e) =>{
     e.preventDefault()
+    this.refs.qfield.value = ""
     api.searchDB(this.state.query).then((response) => {
       // console.log(response)
       this.setState({redirect: true, searchResults: response})
@@ -27,22 +28,32 @@ export default class NavBar extends Component {
 
   render() {
     if (this.state.redirect){
-      return (<Redirect to={{
+      return (
+        <React.Fragment>
+        <nav>
+          <Link to="/">Locations</Link>
+          <Link to="/animals">Animals</Link>
+          <Link to="/employees">Employees</Link>
+          <form onSubmit={this.submitForm}>
+            <input onKeyUp={this.handleFieldChange} ref="qfield" id="query" type="text" placeholder="Search" />
+          </form>
+        </nav>
+      <Redirect to={{
         pathname: '/searchResults',
         state: { referrer: this.state.searchResults }
-      }} />)
+      }}
+      />
+      </React.Fragment>)
     }
     else {
-    return (
-      <nav>
+    return <nav>
         <Link to="/">Locations</Link>
         <Link to="/animals">Animals</Link>
         <Link to="/employees">Employees</Link>
         <form onSubmit={this.submitForm}>
-          <input onKeyUp={this.handleFieldChange} id="query" type="text" placeholder="Search" />
+          <input onKeyUp={this.handleFieldChange} ref="qfield" id="query" type="text" placeholder="Search" />
         </form>
       </nav>
-    )
   }
 }
 }

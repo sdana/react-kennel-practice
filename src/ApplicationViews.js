@@ -8,6 +8,7 @@ import EmployeeList from "./EmployeeList"
 import Employee from "./Employee"
 import Login from "./Login"
 import SearchResults from "./SearchResults"
+import NavBar from "./nav/NavBar"
 
 export default class ApplicationViews extends Component {
   isAuthenticated = () => {
@@ -23,8 +24,9 @@ export default class ApplicationViews extends Component {
     if (this.isAuthenticated()) {
       return (
         <React.Fragment>
+        <Route path="/" component={NavBar}/>
           <Route path="/login" component={Login} />
-          <Route path="/searchResults" component={SearchResults} />
+          <Route path="/searchResults" render={(props) => { return <SearchResults key={Date.now()} results={props.location.state.referrer}/>}} />
           <Route exact path="/" component={LocationList} />
           <Route
             path="/locations/:locationId"

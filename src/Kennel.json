@@ -40,11 +40,6 @@
       "breed": "Carolina Retriever"
     },
     {
-      "id": "5",
-      "name": "Derkins",
-      "breed": "Pug"
-    },
-    {
       "id": "6",
       "name": "Checkers",
       "breed": "Bulldog"
@@ -53,6 +48,11 @@
       "name": "Angus",
       "breed": "Dalmation",
       "id": "JNlsEmG"
+    },
+    {
+      "name": "Derkins",
+      "breed": "Pug",
+      "id": "jKOOqjF"
     }
   ]
 }

@@ -1,5 +1,7 @@
+import React from 'react'
+
 export default props => {
     return (
-        <h3>{this.props.thing.name}</h3>
+        <h3>{props.currentObject.name}</h3>
     )
 }

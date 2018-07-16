@@ -17,6 +17,7 @@ export default props => {
                     }}>
                     Details
                 </Link>
+                <a className="delete" href="#" onClick={()=>{props.deleteEmployee(props.employee.id)}}>Delete</a>
             </div>
         </div>
     )

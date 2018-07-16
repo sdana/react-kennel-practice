@@ -1,32 +1,30 @@
 import React, { Component } from "react"
 import DisplaySearchResults from "./DisplaySearchResults";
 // import api from "./apiController"
+import NavBar from "./nav/NavBar"
 
 export default class SearchResults extends Component {
     state = {
-        animals: [],
+        results: [],
         redirect: false
     }
     componentDidMount() {
         // console.log("it works!")
-        this.setState({animals: this.props.location.state.referrer})
+        this.setState({results: this.props.location.state.referrer})
         // console.log(this.state.animals)
     }
     render() {
+        console.log(this.state.results)
         return (
             <React.Fragment>
+            <NavBar />
                 <h1>Search Results: </h1>
-                {this.state.animals.map((currentArr, index) =>{
-                    {/* console.log(currentArr) */}
-                    if (currentArr.length !== 0){
-                        {/* console.log(currentArr[index].name) */}
-                        currentArr.map(thing =>{
-                            {/* console.log(thing.name) */}
-                           <DisplaySearchResults thing={thing}>
-                        })
-                        {/* return <h2 key={index}>{currentArr[index].name}</h2> */}
-                    }
-                    })}
+                {this.state.results.map((currentArr) =>{
+                    console.log(currentArr)
+                    return currentArr.map(currentObj => {
+                       return <DisplaySearchResults currentObject={currentObj} />
+                    })
+                })}
             </React.Fragment>
         )
     }

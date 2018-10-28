@@ -4,8 +4,8 @@ import { Redirect } from "react-router-dom"
 export default class Login extends Component {
   // Set initial state
   state = {
+    username: "",
     email: "",
-    password: "",
     remember: false,
     redirect: false
   }
@@ -45,16 +45,16 @@ export default class Login extends Component {
       localStorage.setItem(
         "credentials",
         JSON.stringify({
-          email: this.state.email,
-          password: this.state.password
+          username: this.state.username,
+          email: this.state.email
         })
       )
     } else {
       sessionStorage.setItem(
         "credentials",
         JSON.stringify({
-          email: this.state.email,
-          password: this.state.password
+          username: this.state.username,
+          email: this.state.email
         })
       )
     }
@@ -68,21 +68,21 @@ export default class Login extends Component {
       return (
         <form onSubmit={this.handleLogin}>
           <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <label htmlFor="inputEmail">Email address</label>
+          <label htmlFor="inputUname">Username</label>
+          <input
+            onChange={this.handleFieldChange}
+            type="text"
+            id="Uname"
+            placeholder="Username"
+            required=""
+            autoFocus=""
+          />
+          <label htmlFor="inputEmail">E-mail</label>
           <input
             onChange={this.handleFieldChange}
             type="email"
             id="email"
-            placeholder="Email address"
-            required=""
-            autoFocus=""
-          />
-          <label htmlFor="inputPassword">Password</label>
-          <input
-            onChange={this.handleFieldChange}
-            type="password"
-            id="password"
-            placeholder="Password"
+            placeholder="E-mail"
             required=""
           />
           <label htmlFor="rememberMe">Remember Me</label>

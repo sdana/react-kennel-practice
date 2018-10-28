@@ -12,12 +12,7 @@ import NavBar from "./nav/NavBar"
 
 export default class ApplicationViews extends Component {
   isAuthenticated = () => {
-    if (
-      localStorage.getItem("credentials") ||
-      sessionStorage.getItem("credentials") !== null
-    ) {
-      return true
-    }
+    return sessionStorage.getItem("credentials")
   }
 
   render() {
